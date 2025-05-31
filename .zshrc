@@ -271,7 +271,7 @@ if [ -f /etc/zsh_command_not_found ]; then
 fi
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-export PATH=$PATH:/bin:/home/oc/.local/bin:/home/oc/Scripts:/mnt/HDD/Games/
+export PATH=$PATH:/bin:$HOME/.local/bin:$HOME/Scripts
 export VISUAL=vim
 export EDITOR=vim
 export TERMINAL=st
