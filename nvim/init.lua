@@ -38,13 +38,20 @@ Plug('sitiom/nvim-numbertoggle') --auto-toggle relatives
 Plug('williamboman/mason.nvim') 
 Plug('williamboman/mason-lspconfig.nvim') 
 Plug('hrsh7th/cmp-nvim-lsp')
+Plug('hrsh7th/cmp-buffer')
+Plug('hrsh7th/cmp-path')
+Plug('hrsh7th/cmp-vsnip')
+Plug('hrsh7th/vim-vsnip')
+Plug('hrsh7th/cmp-cmdline')
 Plug('hrsh7th/nvim-cmp')
 Plug('lervag/vimtex')
+Plug('petertriho/cmp-git')
 
 vim.call('plug#end')
 
 require("plugins.mason")
 require("plugins.lsp")
+require("plugins.nvim-cmp")
 require("plugins.vimtex")
 -- move config and plugin config to alternate files
 require("config.theme")
