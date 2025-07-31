@@ -41,6 +41,10 @@ map("n", "<F5>", ":resize +2<CR>")
 map("n", "<F6>", ":resize -2<CR>")
 map("n", "<F7>", ":vertical resize +2<CR>")
 map("n", "<F8>", ":vertical resize -2<CR>")
+map("n", "<C-j>", ":m .+1<CR>==")
+map("n", "<C-k>", ":m .-2<CR>==")
+map("v", "<C-j>", ":m '>+1<CR>gv=gv")
+map("v", "<C-k>", ":m '<-2<CR>gv=gv")
 
 -- fzf and grep
 map("n", "<leader>f", ":lua require('fzf-lua').files()<CR>") --search cwd

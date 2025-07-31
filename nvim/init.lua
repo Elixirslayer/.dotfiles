@@ -38,6 +38,7 @@ Plug('sitiom/nvim-numbertoggle') --auto-toggle relatives
 Plug('williamboman/mason.nvim') 
 Plug('williamboman/mason-lspconfig.nvim') 
 Plug('hrsh7th/cmp-nvim-lsp')
+Plug('NStefan002/speedtyper.nvim')
 Plug('hrsh7th/cmp-buffer')
 Plug('hrsh7th/cmp-path')
 Plug('hrsh7th/cmp-vsnip')
@@ -46,6 +47,7 @@ Plug('hrsh7th/cmp-cmdline')
 Plug('hrsh7th/nvim-cmp')
 Plug('lervag/vimtex')
 Plug('petertriho/cmp-git')
+Plug('mg979/vim-visual-multi')
 
 vim.call('plug#end')
 
