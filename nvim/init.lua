@@ -15,7 +15,6 @@ vim.call('plug#begin')
 
 Plug('catppuccin/nvim', { ['as'] = 'catppuccin' }) --colorscheme
 Plug('ellisonleao/gruvbox.nvim', { ['as'] = 'gruvbox' }) --colorscheme 2
-Plug('uZer/pywal16.nvim', { [ 'as' ] = 'pywal16' }) --or, pywal colorscheme
 Plug('nvim-lualine/lualine.nvim') --statusline
 Plug('nvim-tree/nvim-web-devicons') --pretty icons
 Plug('folke/which-key.nvim') --mappings popup
@@ -35,6 +34,7 @@ Plug('MeanderingProgrammer/render-markdown.nvim') --render md inline
 Plug('emmanueltouzery/decisive.nvim') --view csv files
 Plug('folke/twilight.nvim') --surrounding dim
 Plug('sitiom/nvim-numbertoggle') --auto-toggle relatives
+Plug('neovim/nvim-lspconfig') 
 Plug('williamboman/mason.nvim') 
 Plug('williamboman/mason-lspconfig.nvim') 
 Plug('hrsh7th/cmp-nvim-lsp')

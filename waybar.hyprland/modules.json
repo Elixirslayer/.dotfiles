@@ -1,0 +1,90 @@
+{
+  "hyprland/window": {
+    "format": " {}",
+    "tooltip": false
+},
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "warp-on-scroll": false,
+        "format": "{icon}",
+		"format-icons": {
+        "1": "󰈹",  
+        "2": "",  
+        "3": "",  
+        "4": "",  
+        "5": "",  
+        "6": "",  
+        "7": "",  
+        "8": "",  
+        "9": "󰍁"   
+    }
+    },
+	"custom/media": {
+    "exec": "~/.config/waybar/scripts/musicW.sh",
+    "return-type": "text",
+    "format": " {}",
+    "interval": "once",
+    "signal": 1,
+	"on-click": "zsh -c 'CURRENT=$(cat /tmp/waybar_mus_format); echo $(( (CURRENT + 1) % 2 )) > /tmp/waybar_mus_format; pkill -RTMIN+10 waybar'",
+	"on-click-middle": "/home/oc/Scripts/media-play-pause.zsh",
+    "on-click-right": "setsid -w -f foot --app-id=pulsemixer pulsemixer",
+    "on-scroll-up": "playerctl volume 0.05+",
+    "on-scroll-down": "playerctl volume 0.05-"
+},	
+    "custom/vol": {
+		"exec": "~/.config/waybar/scripts/volume",
+		"interval": "once",
+		"return-type": "text",
+		"format": "| {}",
+		"tooltip": false,
+		"signal": 2,
+},
+    "custom/net": {
+			"exec": "~/.config/waybar/netspeed/netspeed",
+			"format": "|{}",
+			"interval": 1,
+		    "tooltip": false,
+},
+    "network": {
+        "format-wifi": "   {essid} ({signalStrength}%)",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "on-click": "sh ~/scripts/rofi-wifi-menu/rofi-wifi-menu.sh"
+    },
+	"custom/cpu": {
+    "exec": "~/.config/waybar/scripts/cpu-temp.sh",
+    "interval": 5,
+    "return-type": "text",
+    "format": "{}",
+    "tooltip": false
+    },
+	"custom/disk": {
+		"exec": "~/.config/waybar/scripts/disk_free",
+		"interval": 5,
+		"return-type": "text",
+		"format": "| {}",
+		"tooltip": false,
+		"on-click": "bash -c 'DISKS=(\"/mnt/HDD\" \"/home\"); DISKS_FILE=\"/tmp/dwmblocks_disk_info\"; read INDEX FORMAT < \"$DISKS_FILE\"; echo \"$(( ($INDEX + 1) % ${#DISKS[@]} )) $FORMAT\" > \"$DISKS_FILE\"; pkill -RTMIN+3 dwmblocks'",
+		"on-click-right": "bash -c 'DISKS=(\"/mnt/HDD\" \"/home\"); DISKS_FILE=\"/tmp/dwmblocks_disk_info\"; read INDEX FORMAT < \"$DISKS_FILE\"; echo \"$(( ($INDEX - 1) % ${#DISKS[@]} )) $FORMAT\" > \"$DISKS_FILE\"; pkill -RTMIN+3 dwmblocks'",
+		"on-click-middle": "bash -c 'DISKS=(\"/mnt/HDD\" \"/home\"); DISKS_FILE=\"/tmp/dwmblocks_disk_info\"; read INDEX FORMAT < \"$DISKS_FILE\"; echo \"$INDEX $(( ($FORMAT + 1) % 2 ))\" > \"$DISKS_FILE\"; pkill -RTMIN+3 dwmblocks'",
+
+	},
+	"memory": {
+    "format": "| RAM:{used}/16G",
+    "format-alt": "| RAM:{percentage}%",
+	"interval": 5,
+    "tooltip": false,
+    },
+    "clock": {
+        "format": "| {:%b %d (%a) %I:%M%p} ",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    },
+    "custom/layout": {
+    "format": "[]=",
+    "interval": "once",
+  }
+
+}

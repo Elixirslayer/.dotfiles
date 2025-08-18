@@ -27,8 +27,8 @@ map('n', '<A-4>', '<Cmd>BufferGoto 4<CR>')
 map('n', '<A-5>', '<Cmd>BufferGoto 5<CR>')
 map('n', '<A-6>', '<Cmd>BufferGoto 6<CR>')
 map('n', '<A-7>', '<Cmd>BufferGoto 7<CR>')
-map('n', '<A-8>', '<Cmd>BufferGoto 8<CR>')
 map('n', '<A-9>', '<Cmd>BufferGoto 9<CR>')
+map('n', '<A-8>', '<Cmd>BufferGoto 8<CR>')
 map('n', '<A-0>', '<Cmd>BufferLast<CR>')
 map('n', '<A-p>', '<Cmd>BufferPin<CR>')
 
@@ -41,10 +41,10 @@ map("n", "<F5>", ":resize +2<CR>")
 map("n", "<F6>", ":resize -2<CR>")
 map("n", "<F7>", ":vertical resize +2<CR>")
 map("n", "<F8>", ":vertical resize -2<CR>")
-map("n", "<C-j>", ":m .+1<CR>==")
-map("n", "<C-k>", ":m .-2<CR>==")
-map("v", "<C-j>", ":m '>+1<CR>gv=gv")
-map("v", "<C-k>", ":m '<-2<CR>gv=gv")
+map("n", "<C-S-j>", ":m .+1<CR>==")
+map("n", "<C-S-k>", ":m .-2<CR>==")
+map("v", "<C-S-j>", ":m '>+1<CR>gv=gv")
+map("v", "<C-S-k>", ":m '<-2<CR>gv=gv")
 
 -- fzf and grep
 map("n", "<leader>f", ":lua require('fzf-lua').files()<CR>") --search cwd
@@ -72,6 +72,8 @@ map("n", "<leader>u", ':silent !xdg-open "<cWORD>" &<CR>') --open a url under cu
 map("v", "<leader>i", "=gv") --auto indent
 map("n", "<leader>W", ":set wrap!<CR>") --toggle wrap
 map("n", "<leader>l", ":Twilight<CR>") --surrounding dim
+map('i', '<C-w>', '<Nop>', { noremap = true })  -- Unmap Ctrl-w in insert mode
+map('i', '<C-BS>', '<C-w>', { noremap = true })
 
 -- decisive csv
 map("n", "<leader>csa", ":lua require('decisive').align_csv({})<cr>")

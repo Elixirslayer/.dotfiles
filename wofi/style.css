@@ -1,0 +1,65 @@
+/* Converted Rounded Gray Dark Theme for Wofi */
+/* Original Rofi theme by Newman Sanchez */
+/* Converted to Wofi CSS - 2025-08-15 */
+
+window {
+    /* Window positioning - set via Wofi launch flags instead of CSS */
+    min-width: 480px;
+    border-radius: 24px;
+    background-color: rgba(33, 33, 33, 0.95); /* bg0: #212121F2 */
+    padding: 12px; /* mainbox padding */
+}
+
+#input {
+    /* Combined inputbar + prompt + entry styles */
+    color: #E6E6E6; /* fg0 */
+    background-color: #2A2A2A; /* bg1 */
+    border: 2px solid #616161; /* bg3 */
+    border-radius: 16px;
+    padding: 8px 16px;
+    margin-bottom: 12px; /* listview margin-top */
+    font-family: Roboto;
+    font-size: 14px;
+}
+
+/* Placeholder text - requires Wofi patched version */
+#input:placeholder {
+    color: #3D3D3D; /* fg3 */
+}
+
+#inner-box {
+    background-color: transparent;
+    spacing: 8px; /* element spacing */
+}
+
+#entry {
+    /* Normal element styling */
+    padding: 8px 16px 8px 8px;
+    border-radius: 16px;
+    color: #E6E6E6; /* fg0 */
+    background-color: rgba(61, 61, 61, 0.25);
+    font-family: Roboto;
+    font-size: 16px;
+}
+
+#entry:selected {
+    /* Selected element styling */
+    background-color: rgba(97, 97, 97, 0.95); /* bg3 */
+    color: #E6E6E6; /* fg0 */
+}
+
+#entry image {
+    /* Icon styling */
+    height: 1em;
+    margin-right: 8px; /* spacing between icon and text */
+    vertical-align: 0.5;
+}
+
+#text {
+    color: inherit; /* Use parent's text color */
+}
+
+/* Scrollbar styling - Wofi specific */
+#scroll {
+    margin: 12px 0 0;
+}

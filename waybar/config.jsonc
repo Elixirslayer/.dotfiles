@@ -1,0 +1,26 @@
+// -*- mode: jsonc -*-
+{
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "height": 22, // Waybar height (to be removed for auto height)
+    "spacing": 0, // Gaps between modules (4px)
+    "modules-left": [
+        "dwl/tags",
+		// "custom/layout",
+		"dwl/window",
+    ],
+    "modules-center": [
+	],
+    "modules-right": [
+		"custom/media",
+		"custom/net",
+        "custom/vol",
+        "custom/cpu",
+		"custom/disk",
+        "memory",
+        "clock"
+    ],
+    "include": [
+		"~/.config/waybar/modules.json"
+	]
+}
