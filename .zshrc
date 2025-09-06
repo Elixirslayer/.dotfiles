@@ -132,16 +132,6 @@ PROMPT="${NEWLINE}%K{#2E3440}%F{#E5E9F0}$(date +%_I:%M%P) %K{#3b4252}%F{#ECEFF4}
 			test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
 			export LS_COLORS="$LS_COLORS:ow=30;44:" # fix ls color for folders with 777 permissions
 
-			alias ls='ls --color=auto'
-			#alias dir='dir --color=auto'
-			#alias vdir='vdir --color=auto'
-
-			alias grep='grep --color=auto'
-			alias fgrep='fgrep --color=auto'
-			alias egrep='egrep --color=auto'
-			alias diff='diff --color=auto'
-			alias ip='ip --color=auto'
-
 			export LESS_TERMCAP_mb=$'\E[1;31m'     # begin blink
 			export LESS_TERMCAP_md=$'\E[1;36m'     # begin bold
 			export LESS_TERMCAP_me=$'\E[0m'        # reset bold/blink
@@ -171,20 +161,15 @@ fi
 if [ -f /etc/zsh_command_not_found ]; then
 		. /etc/zsh_command_not_found
 fi
+
+[ -f "$HOME/.dotfiles/aliases" ] && source "$HOME/.dotfiles/aliases"
+[ -f "$HOME/.dotfiles/vars" ] && source "$HOME/.dotfiles/vars"
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 export PATH=$PATH:/bin:$HOME/.local/bin:$HOME/Scripts
-export VISUAL=vim
-export EDITOR=vim
-export TERMINAL=st
-export XDG_MUSIC_DIR=/mnt/HDD/Sailing/Music
-export XDG_CACHE_HOME=/home/oc/.cache
-export LF_ICONS="$(cat ~/.config/lf/icons)"
-alias cp='cpg -g'
-alias mv='mvg -g'
-alias kctl='sudo k3s kubectl'
 VIMRUNTIME=/usr/share/nvim/runtime
 GTK_IM_MODULE=ibus
 QT_IM_MODULE=ibus
 XMODIFIERS=@im=ibus
-dwl_output_fileame="$HOME"/.cache/dwltags
+
+

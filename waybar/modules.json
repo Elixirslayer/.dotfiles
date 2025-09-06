@@ -1,11 +1,13 @@
 {
 		"hyprland/window": {
 		"format": "{}",
-		"tooltip": false
+		"tooltip": false,
+		"swap-icon-label": true
 },
 "dwl/window": {
 		"format": "{layout} {title}",
-		"tooltip": false
+		"tooltip": false,
+		"swap-icon-label": true
 },
 "dwl/tags": {
 		"format": "{tag}",
@@ -21,7 +23,8 @@
 				"",
 				"",
 				"󰍁"
-		]
+		],
+		"swap-icon-label": true
 },
 "hyprland/workspaces": {
 		"disable-scroll": true,
@@ -38,7 +41,8 @@
 				"7": "",  
 				"8": "",  
 				"9": "󰍁"   
-		}
+		},
+		"swap-icon-label": true
 },
 "custom/media": {
 		"exec": "~/.config/waybar/scripts/musicW.sh",
@@ -50,7 +54,8 @@
 		"on-click-middle": "/home/oc/Scripts/media-play-pause.zsh",
 		"on-click-right": "setsid -w -f foot --app-id=pulsemixer pulsemixer",
 		"on-scroll-up": "playerctl volume 0.05+",
-		"on-scroll-down": "playerctl volume 0.05-"
+		"on-scroll-down": "playerctl volume 0.05-",
+		"swap-icon-label": true
 },	
 "custom/vol": {
 		"exec": "~/.config/waybar/scripts/volume",
@@ -59,27 +64,25 @@
 		"format": "| {}",
 		"tooltip": false,
 		"signal": 11,
+		"on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+		"on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
+		"on-click-middle": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+		"swap-icon-label": true
 },
 "custom/net": {
 		"exec": "~/.config/waybar/netspeed/netspeed",
 		"format": "|{}",
 		"interval": 1,
 		"tooltip": false,
-},
-"network": {
-		"format-wifi": "   {essid} ({signalStrength}%)",
-		"format-ethernet": "{ipaddr}/{cidr} ",
-		"tooltip-format": "{ifname} via {gwaddr} ",
-		"format-linked": "{ifname} (No IP) ",
-		"format-disconnected": "Disconnected ⚠",
-		"on-click": "sh ~/scripts/rofi-wifi-menu/rofi-wifi-menu.sh"
+		"swap-icon-label": true
 },
 "custom/cpu": {
 		"exec": "~/.config/waybar/scripts/cpu-temp.sh",
 		"interval": 5,
 		"return-type": "text",
 		"format": "{}",
-		"tooltip": false
+		"tooltip": false,
+		"swap-icon-label": true
 },
 "custom/disk": {
 		"exec": "~/.config/waybar/scripts/disk_free",
@@ -90,20 +93,18 @@
 		"on-click": "bash -c 'DISKS=(\"/mnt/HDD\" \"/home\"); DISKS_FILE=\"/tmp/dwmblocks_disk_info\"; read INDEX FORMAT < \"$DISKS_FILE\"; echo \"$(( ($INDEX + 1) % ${#DISKS[@]} )) $FORMAT\" > \"$DISKS_FILE\"; pkill -RTMIN+3 dwmblocks'",
 		"on-click-right": "bash -c 'DISKS=(\"/mnt/HDD\" \"/home\"); DISKS_FILE=\"/tmp/dwmblocks_disk_info\"; read INDEX FORMAT < \"$DISKS_FILE\"; echo \"$(( ($INDEX - 1) % ${#DISKS[@]} )) $FORMAT\" > \"$DISKS_FILE\"; pkill -RTMIN+3 dwmblocks'",
 		"on-click-middle": "bash -c 'DISKS=(\"/mnt/HDD\" \"/home\"); DISKS_FILE=\"/tmp/dwmblocks_disk_info\"; read INDEX FORMAT < \"$DISKS_FILE\"; echo \"$INDEX $(( ($FORMAT + 1) % 2 ))\" > \"$DISKS_FILE\"; pkill -RTMIN+3 dwmblocks'",
-
+		"swap-icon-label": true
 },
 "memory": {
 		"format": "| RAM:{used}/16G",
 		"format-alt": "| RAM:{percentage}%",
 		"interval": 5,
 		"tooltip": false,
+		"swap-icon-label": true
 },
 "clock": {
 		"format": "| {:%b %d (%a) %I:%M%p} ",
 		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-},
-"custom/layout": {
-		"format": "[]=",
-		"interval": "once",
+		"swap-icon-label": true
 }
 }
