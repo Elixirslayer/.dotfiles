@@ -10,7 +10,7 @@ MUSIC_STATUS=$(playerctl --player=$MUSIC status 2>/dev/null)
 
 if [[ $BROWSER_STATUS == "Playing" ]]; then
     PLAYER=$BROWSER
-    ICON="󰖟 "
+    ICON="🎵 "
     NORMAL=$(playerctl metadata --player=$PLAYER --format '{{ trunc(title,25) }}' 2>/dev/null)
     ALTERNATE=$(playerctl metadata --player=$PLAYER --format '{{ trunc(artist,17) }} - {{ trunc(title,17) }}' 2>/dev/null)
 else

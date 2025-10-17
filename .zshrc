@@ -162,14 +162,24 @@ if [ -f /etc/zsh_command_not_found ]; then
 		. /etc/zsh_command_not_found
 fi
 
+LF_ICONS=$(sed ~/.config/lf/diricons \
+            -e '/^[ \t]*#/d'       \
+            -e '/^[ \t]*$/d'       \
+            -e 's/[ \t]\+/=/g'     \
+            -e 's/$/ /')
+LF_ICONS=${LF_ICONS//$'\n'/:}
+export LF_ICONS
+
 [ -f "$HOME/.dotfiles/aliases" ] && source "$HOME/.dotfiles/aliases"
 [ -f "$HOME/.dotfiles/vars" ] && source "$HOME/.dotfiles/vars"
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-export PATH=$PATH:/bin:$HOME/.local/bin:$HOME/Scripts
+export PATH=$PATH:/bin:$HOME/.local/bin:$HOME/Scripts:$HOME/go/bin
 VIMRUNTIME=/usr/share/nvim/runtime
 GTK_IM_MODULE=ibus
 QT_IM_MODULE=ibus
 XMODIFIERS=@im=ibus
+XDG_RUNTIME_DIR=/run/user/$(id -u)
 
-
+export XCURSOR_THEME="Adwaita"
+export XCURSOR_SIZE=24

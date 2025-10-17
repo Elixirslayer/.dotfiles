@@ -1,3 +1,8 @@
+-- bread's neovim config
+-- keymaps are in lua/config/mappings.lua
+-- install a patched font & ensure your terminal supports glyphs
+-- enjoy :D
+
 -- auto install vim-plug and plugins, if not found
 local data_dir = vim.fn.stdpath('data')
 if vim.fn.empty(vim.fn.glob(data_dir .. '/site/autoload/plug.vim')) == 1 then
@@ -13,6 +18,7 @@ vim.g.start_time = vim.fn.reltime()
 vim.loader.enable() --  SPEEEEEEEEEEED 
 vim.call('plug#begin')
 
+Plug('mg979/vim-visual-multi')
 Plug('catppuccin/nvim', { ['as'] = 'catppuccin' }) --colorscheme
 Plug('ellisonleao/gruvbox.nvim', { ['as'] = 'gruvbox' }) --colorscheme 2
 Plug('nvim-lualine/lualine.nvim') --statusline
@@ -33,28 +39,9 @@ Plug('ron-rs/ron.vim') --ron syntax highlighting
 Plug('MeanderingProgrammer/render-markdown.nvim') --render md inline
 Plug('emmanueltouzery/decisive.nvim') --view csv files
 Plug('folke/twilight.nvim') --surrounding dim
-Plug('sitiom/nvim-numbertoggle') --auto-toggle relatives
-Plug('neovim/nvim-lspconfig') 
-Plug('williamboman/mason.nvim') 
-Plug('williamboman/mason-lspconfig.nvim') 
-Plug('hrsh7th/cmp-nvim-lsp')
-Plug('NStefan002/speedtyper.nvim')
-Plug('hrsh7th/cmp-buffer')
-Plug('hrsh7th/cmp-path')
-Plug('hrsh7th/cmp-vsnip')
-Plug('hrsh7th/vim-vsnip')
-Plug('hrsh7th/cmp-cmdline')
-Plug('hrsh7th/nvim-cmp')
-Plug('lervag/vimtex')
-Plug('petertriho/cmp-git')
-Plug('mg979/vim-visual-multi')
 
 vim.call('plug#end')
 
-require("plugins.mason")
-require("plugins.lsp")
-require("plugins.nvim-cmp")
-require("plugins.vimtex")
 -- move config and plugin config to alternate files
 require("config.theme")
 require("config.mappings")
