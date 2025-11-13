@@ -1,3 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =1
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/mnt/HDD/Sailing/Academia/Cengage'
+let g:netrw_dirhist_2='/mnt/HDD/Sailing/Mangas/Grand Blue Dreaming (Digital) (1r0n)'
 let g:netrw_dirhist_1='/home/oc'

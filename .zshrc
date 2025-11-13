@@ -183,3 +183,18 @@ XDG_RUNTIME_DIR=/run/user/$(id -u)
 
 export XCURSOR_THEME="Adwaita"
 export XCURSOR_SIZE=24
+. "/home/oc/.acme.sh/acme.sh.env"
+export SYNC_ENDPOINT=https://bankaitab.space/ankisync
+export SYNC_ENDPOINT_MEDIA=https://bankaitab.space/ankisync
+export SYNC_HOST=::
+export SYNC_PORT=9090
+export SYNC_USER1=Gentoo:Alohomora#ANKI
+export GOROOT=/usr/lib/go
+export GOPATH=/usr/local/gopath
+export GOPROXY=https://proxy.golang.org,direct
+export GOSUMDB=sum.golang.org
+export GOBIN=/usr/local/bin
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+# export XKB_DEFAULT_LAYOUT=us
+# export XKB_DEFAULT_VARIANT=colemak_dh
+# export XKB_DEFAULT_OPTIONS=ctrl:nocaps

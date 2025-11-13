@@ -4,12 +4,9 @@
 CPU_USAGE=$(top -bn1 | grep "Cpu(s)" | sed "s/.*, *\([0-9.]*\)%* id.*/\1/" | awk '{print 100 - $1}')
 CPU_USAGE=${CPU_USAGE%.*}  # Remove decimal
 
-# Get temperature
-TEMP_PATH="/sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input"
-if [ -f "$TEMP_PATH" ]; then
-    TEMP_RAW=$(cat "$TEMP_PATH")
-    TEMP=$((TEMP_RAW / 1000))
-else
+# Get temperature from sensors command
+TEMP=$(sensors | grep "Package id 0" | awk '{print $4}' | sed 's/+//;s/°C//;s/\..*//')
+if [ -z "$TEMP" ]; then
     TEMP="N/A"
 fi
 
