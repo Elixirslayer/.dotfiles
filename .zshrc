@@ -172,8 +172,8 @@ export LF_ICONS
 
 [ -f "$HOME/.dotfiles/aliases" ] && source "$HOME/.dotfiles/aliases"
 [ -f "$HOME/.dotfiles/vars" ] && source "$HOME/.dotfiles/vars"
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/site-functions/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/site-functions/zsh-autosuggestions.zsh
 export PATH=$PATH:/bin:$HOME/.local/bin:$HOME/Scripts:$HOME/go/bin
 VIMRUNTIME=/usr/share/nvim/runtime
 GTK_IM_MODULE=ibus
@@ -183,7 +183,6 @@ XDG_RUNTIME_DIR=/run/user/$(id -u)
 
 export XCURSOR_THEME="Adwaita"
 export XCURSOR_SIZE=24
-. "/home/oc/.acme.sh/acme.sh.env"
 export SYNC_ENDPOINT=https://bankaitab.space/ankisync
 export SYNC_ENDPOINT_MEDIA=https://bankaitab.space/ankisync
 export SYNC_HOST=::
@@ -194,7 +193,7 @@ export GOPATH=/usr/local/gopath
 export GOPROXY=https://proxy.golang.org,direct
 export GOSUMDB=sum.golang.org
 export GOBIN=/usr/local/bin
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin:$HOME/.nix-profile/bin
 # export XKB_DEFAULT_LAYOUT=us
 # export XKB_DEFAULT_VARIANT=colemak_dh
 # export XKB_DEFAULT_OPTIONS=ctrl:nocaps
