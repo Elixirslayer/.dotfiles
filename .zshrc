@@ -149,6 +149,7 @@ PROMPT="${NEWLINE}%K{#2E3440}%F{#E5E9F0}$(date +%_I:%M%P) %K{#3b4252}%F{#ECEFF4}
 alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
+alias ls='ls --color=auto'
 
 # enable auto-suggestions based on the history
 if [ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
