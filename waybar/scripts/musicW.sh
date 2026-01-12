@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-MUSIC=mpd
-BROWSER=chromium
+MUSIC=firefox
+BROWSER=firefox
 
 BROWSER_STATUS=$(playerctl --player=$BROWSER status 2>/dev/null)
 MUSIC_STATUS=$(playerctl --player=$MUSIC status 2>/dev/null)

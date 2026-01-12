@@ -53,8 +53,8 @@
 		"on-click": "zsh -c 'CURRENT=$(cat /tmp/waybar_mus_format); echo $(( (CURRENT + 1) % 2 )) > /tmp/waybar_mus_format; pkill -RTMIN+10 waybar'",
 		"on-click-middle": "/home/oc/Scripts/media-play-pause.zsh",
 		"on-click-right": "setsid -w -f foot --app-id=pulsemixer pulsemixer",
-		"on-scroll-up": "playerctl volume 0.05+",
-		"on-scroll-down": "playerctl volume 0.05-",
+		"on-scroll-up": "/home/oc/Scripts/media-next.zsh",
+		"on-scroll-down": "/home/oc/Scripts/media-previous.zsh",
 		"swap-icon-label": true
 },	
 "custom/vol": {
